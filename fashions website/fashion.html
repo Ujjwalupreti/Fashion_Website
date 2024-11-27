@@ -1,0 +1,341 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ClothingStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="fashion.css">
+    <style>
+        /* Background image for the navbar section */
+        .navbar-bg {
+            background-image: url(''); /* replace with your desired background */
+            background-size: cover; /* Ensures the background covers the whole navbar */
+            background-position: center; /* Centers the background image */
+            background-attachment: fixed; /* Keeps the background fixed during scrolling */
+            padding: 10px 0;
+        }
+
+        /* Optional: Increase font size and padding for the navbar */
+        .navbar-nav .nav-link {
+            font-size: 1.3rem;  /* Adjust font size */
+            padding: 13px 20px; /* Adjust padding */
+        }
+
+        /* Optional: Increase the height of the navbar */
+        .navbar {
+            padding: 15px 0; /* Increase padding to make navbar a bit taller */
+            z-index: 1; /* Ensure navbar is above other content */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar Section with Background Image -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-bg">
+    <div class="container">
+        <a class="navbar-brand" href="#" onclick="showPage('home')">FASHION NEXT</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage('home')">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage('products')">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage('about')">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage('contact')">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage('cart')">Cart <span id="cart-count">0</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage('orders')">My Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage('faq')">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Main Content -->
+<div class="container mt-4" id="main-content">
+    <!-- Home Section -->
+    <div id="home" class="page">
+        <h2 class="text-center">Featured Products</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="Image\Sample image3.jpg" class="card-img-top" alt="Men's shirt">
+                    <div class="card-body">
+                        <h5 class="card-title">Men's shirt</h5>
+                        <p class="card-text">$25.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Men\'s shirt', 25.00, 'shirt.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="Image\Sample image15.jpg" class="card-img-top" alt="Women's Dress">
+                    <div class="card-body">
+                        <h5 class="card-title">Women's Dress</h5>
+                        <p class="card-text">$45.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Women dress', 45.00, 'jeans.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="Image\Sample image7.jpg" class="card-img-top" alt="Jeans">
+                    <div class="card-body">
+                        <h5 class="card-title">Jeans</h5>
+                        <p class="card-text">$35.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Jeans', 35.00, 'jeans.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+</div>
+<!-- Second Row of Products -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="Image\Sample image6.jpg" class="card-img-top" alt="Hoodie">
+                    <div class="card-body">
+                        <h5 class="card-title">Hoodie</h5>
+                        <p class="card-text">$40.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Hoodie', 40.00, 'blackhoodie.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="Image\Sample image9.jpg" class="card-img-top" alt="Sneakers">
+                    <div class="card-body">
+                        <h5 class="card-title">Sneakers</h5>
+                        <p class="card-text">$60.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Sneakers', 60.00, 'sneaker.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+<div class="col-md-4">
+                <div class="card">
+                    <img src="Image\Sample image8.jpg" class="card-img-top" alt="Jacket">
+                    <div class="card-body">
+                        <h5 class="card-title">Jacket</h5>
+                        <p class="card-text">$55.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Jacket', 55.00, 'coat.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- Third Row of Products -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="Image\Sample image11.jpg" class="card-img-top" alt="Cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Cap</h5>
+                        <p class="card-text">$20.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Cap', 20.00, 'cap.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="Image\Sample image13.jpg" class="card-img-top" alt="Bag">
+                    <div class="card-body">
+                        <h5 class="card-title">Bag</h5>
+                        <p class="card-text">$30.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Bag', 30.00, 'bag.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+<div class="col-md-4">
+                <div class="card">
+                    <img src="kid jeans.avif" class="card-img-top" alt="Scarf">
+                    <div class="card-body">
+                        <h5 class="card-title">Jeans for boys</h5>
+                        <p class="card-text">$15.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('kid jeans.avif')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- About Us Section -->
+<div id="about" class="page" style="display:none;">
+    <h2>About Us</h2>
+    <div class="container">
+        <div class="row">
+            <!-- Developer 1 -->
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="Image\blankimage.jpg" class="card-img-top" alt="Developer 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Ujjwal Upreti</h5>
+                        <p class="card-text">Frontend Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Contact Section -->
+    <div id="contact" class="page" style="display:none;">
+        <h2>Contact Us</h2>
+        <p>Email: Sorry,no information available</p>
+        <p>Mobile: Sorry,no information available</p>
+    </div>
+
+    <!-- Payment Section -->
+    <div id="payment" class="page" style="display:none;">
+        <h2>Payment Details</h2>
+        <form id="payment-form" onsubmit="processPayment(event)">
+            <div class="mb-3">
+                <label for="atm-no" class="form-label">ATM Card Number</label>
+                <input type="text" id="atm-no" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="cvv" class="form-label">CVV</label>
+                <input type="text" id="cvv" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="expiry-date" class="form-label">Expiry Date (MM/YY)</label>
+                <input type="text" id="expiry-date" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Pay Now</button>
+        </form>
+    </div>
+
+    <!-- Cart Section -->
+    <div id="cart" class="page" style="display:none;">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <button class="btn btn-success" id="proceed-to-payment" onclick="showPaymentPage()" style="display:none;">Proceed to Payment</button>
+    </div>
+    
+<!-- Products Section -->
+    <div id="products" class="page" style="display:none;">
+        <h2>Our Products</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="list-group-item">
+                    <img src="Image\Sample image3.jpg" alt="Men's T-shirt" class="img-fluid">
+                    <h5>Men's shirt</h5>
+                    <p>$25.00</p>
+                    <button class="btn btn-primary" onclick="addToCart('Men\'s shirt', 25.00, 'OIP (1).jpg')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="list-group-item">
+                    <img src="Image\Sample image5.jpg" alt="Women's Dress" class="img-fluid">
+                    <h5>Women's lehenga</h5>
+                    <p>$45.00</p>
+                    <button class="btn btn-primary" onclick="addToCart('Women\'s lehenga', 45.00, 'download (2).jpg')">Add to Cart</button>
+                </div>
+            </div>
+<div class="col-md-4">
+                <div class="list-group-item">
+                    <img src="Image\Sample image6.jpg" alt="Jeans" class="img-fluid">
+                    <h5>Blazer</h5>
+                    <p>$35.00</p>
+                    <button class="btn btn-primary" onclick="addToCart('Blazer', 35.00, 'download (4).jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Second Row of Products -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="list-group-item">
+                    <img src="Image\Sample image2.jpg" alt="Hoodie" class="img-fluid">
+                    <h5>Hoodie</h5>
+                    <p>$40.00</p>
+                    <button class="btn btn-primary" onclick="addToCart('Hoodie', 40.00, '16944310389017Black-Hoodie-Non-Zipper-Front.jpg')">Add to Cart</button>
+                </div>
+            </div>
+<div class="col-md-4">
+                <div class="list-group-item">
+                    <img src="Image\Sample image14.jpg" alt="Sneakers" class="img-fluid">
+                    <h5>Sneakers</h5>
+                    <p>$60.00</p>
+                    <button class="btn btn-primary" onclick="addToCart('Sneakers', 60.00, '6-spy-9472-6-world-wear-footwear-grey-original-imagruc3hebewp4b.webp')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="list-group-item">
+                    <img src="Image\Sample image6.jpg" alt="Jacket" class="img-fluid">
+                    <h5>Jacket</h5>
+                    <p>$55.00</p>
+                    <button class="btn btn-primary" onclick="addToCart('Jacket', 55.00, '71eWKWIrdGL._AC_UY1000_.jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+<!-- Third Row of Products -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="list-group-item">
+                    <img src="Image\Sample image4.jpg" alt="Cap" class="img-fluid">
+                    <h5>Bedsheet</h5>
+                    <p>$20.00</p>
+                    <button class="btn btn-primary" onclick="addToCart('Bedsheet', 20.00, '01_83cd64c9-f429-4dc3-916f-8167d2edaa52.webp')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="list-group-item">
+                    <img src="Image\Sample image10.jpg" alt="Bag" class="img-fluid">
+                    <h5>Bag</h5>
+                    <p>$30.00</p>
+                    <button class="btn btn-primary" onclick="addToCart('Bag', 30.00, 'shopping (2).webp')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="list-group-item">
+                    <img src="Image\Sample image1.jpg" alt="Scarf" class="img-fluid">
+                    <h5>half sweater</h5>
+                    <p>$15.00</p>
+                    <button class="btn btn-primary" onclick="addToCart('half sweater', 15.00, '1243179SL-2-38_1.webp')">Add to Cart</button>
+</div>
+        </div>
+    </div>
+            </div>
+    <!-- Orders Section -->
+    <div id="orders" class="page" style="display:none;">
+        <h2>My Orders</h2>
+        <div id="orders-list"></div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div id="faq" class="page" style="display:none;">
+        <h2>Frequently Asked Questions</h2>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action" onclick="toggleAnswer(1)">What is the return policy?</a>
+            <div id="answer-1" class="answer" style="display:none;">
+                <p>We offer a 30-day return policy. Please return items in their original condition.</p>
+            </div>
+            <a href="#" class="list-group-item list-group-item-action" onclick="toggleAnswer(2)">How do I track my order?</a>
+            <div id="answer-2" class="answer" style="display:none;">
+                <p>You can track your order using the tracking number provided in the confirmation email.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JS and Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="fashion.js"></script>
+</body>
+</html>
